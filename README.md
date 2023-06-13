@@ -1,0 +1,1 @@
+# bookinfo, custom kiali labels
