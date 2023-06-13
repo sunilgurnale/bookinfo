@@ -1,0 +1,160 @@
+apiVersion: v1
+items:
+- apiVersion: networking.istio.io/v1beta1
+  kind: DestinationRule
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.istio.io/v1beta1","kind":"DestinationRule","metadata":{"annotations":{"maistra.io/mesh-generation":"2.3.3-1-5"},"labels":{"app":"jaeger","app.kubernetes.io/component":"tracing","app.kubernetes.io/instance":"istio-system1","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"tracing","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.3-1-5","maistra-version":"2.2.6","maistra.io/owner":"istio-system1","maistra.io/owner-name":"basic","release":"istio"},"name":"disable-mtls-jaeger-collector","namespace":"istio-system1","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"dda65628-123a-4fdd-8341-45b28005c0cd"}]},"spec":{"host":"jaeger-collector.istio-system1.svc","trafficPolicy":{"tls":{"mode":"DISABLE"}}}}
+      maistra.io/mesh-generation: 2.3.3-1-5
+    creationTimestamp: "2023-05-26T09:59:35Z"
+    generation: 1
+    labels:
+      app: jaeger
+      app.kubernetes.io/component: tracing
+      app.kubernetes.io/instance: istio-system1
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: tracing
+      app.kubernetes.io/part-of: istio
+      app.kubernetes.io/version: 2.3.3-1-5
+      maistra-version: 2.2.6
+      maistra.io/owner: istio-system1
+      maistra.io/owner-name: basic
+      release: istio
+    name: disable-mtls-jaeger-collector
+    namespace: istio-system1
+    ownerReferences:
+    - apiVersion: maistra.io/v2
+      blockOwnerDeletion: true
+      controller: true
+      kind: ServiceMeshControlPlane
+      name: basic
+      uid: dda65628-123a-4fdd-8341-45b28005c0cd
+    resourceVersion: "12119977"
+    uid: 464d630d-55d5-4dd7-b952-12244707bbe4
+  spec:
+    host: jaeger-collector.istio-system1.svc
+    trafficPolicy:
+      tls:
+        mode: DISABLE
+- apiVersion: networking.istio.io/v1beta1
+  kind: DestinationRule
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.istio.io/v1beta1","kind":"DestinationRule","metadata":{"annotations":{"maistra.io/mesh-generation":"2.3.3-1-5"},"labels":{"app":"jaeger","app.kubernetes.io/component":"tracing","app.kubernetes.io/instance":"istio-system1","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"tracing","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.3-1-5","maistra-version":"2.2.6","maistra.io/owner":"istio-system1","maistra.io/owner-name":"basic","release":"istio"},"name":"disable-mtls-zipkin","namespace":"istio-system1","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"dda65628-123a-4fdd-8341-45b28005c0cd"}]},"spec":{"host":"zipkin","trafficPolicy":{"tls":{"mode":"DISABLE"}}}}
+      maistra.io/mesh-generation: 2.3.3-1-5
+    creationTimestamp: "2023-05-26T09:59:35Z"
+    generation: 1
+    labels:
+      app: jaeger
+      app.kubernetes.io/component: tracing
+      app.kubernetes.io/instance: istio-system1
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: tracing
+      app.kubernetes.io/part-of: istio
+      app.kubernetes.io/version: 2.3.3-1-5
+      maistra-version: 2.2.6
+      maistra.io/owner: istio-system1
+      maistra.io/owner-name: basic
+      release: istio
+    name: disable-mtls-zipkin
+    namespace: istio-system1
+    ownerReferences:
+    - apiVersion: maistra.io/v2
+      blockOwnerDeletion: true
+      controller: true
+      kind: ServiceMeshControlPlane
+      name: basic
+      uid: dda65628-123a-4fdd-8341-45b28005c0cd
+    resourceVersion: "12119978"
+    uid: a9605985-58ba-4e0b-a55c-3f15fec7f5f8
+  spec:
+    host: zipkin
+    trafficPolicy:
+      tls:
+        mode: DISABLE
+- apiVersion: networking.istio.io/v1beta1
+  kind: DestinationRule
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.istio.io/v1beta1","kind":"DestinationRule","metadata":{"annotations":{"maistra.io/mesh-generation":"2.3.3-1-5"},"labels":{"app":"istiod","app.kubernetes.io/component":"istio-discovery","app.kubernetes.io/instance":"istio-system1","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"istio-discovery","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.3-1-5","istio":"pilot","istio.io/rev":"basic","maistra-version":"2.2.6","maistra.io/owner":"istio-system1","maistra.io/owner-name":"basic","release":"istio"},"name":"istiod-basic","namespace":"istio-system1","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"dda65628-123a-4fdd-8341-45b28005c0cd"}]},"spec":{"host":"istiod-basic.istio-system1.svc.cluster.local","trafficPolicy":{"portLevelSettings":[{"port":{"number":8188},"tls":{"mode":"SIMPLE"}}]}}}
+      maistra.io/mesh-generation: 2.3.3-1-5
+    creationTimestamp: "2023-05-26T09:59:08Z"
+    generation: 1
+    labels:
+      app: istiod
+      app.kubernetes.io/component: istio-discovery
+      app.kubernetes.io/instance: istio-system1
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: istio-discovery
+      app.kubernetes.io/part-of: istio
+      app.kubernetes.io/version: 2.3.3-1-5
+      istio: pilot
+      istio.io/rev: basic
+      maistra-version: 2.2.6
+      maistra.io/owner: istio-system1
+      maistra.io/owner-name: basic
+      release: istio
+    name: istiod-basic
+    namespace: istio-system1
+    ownerReferences:
+    - apiVersion: maistra.io/v2
+      blockOwnerDeletion: true
+      controller: true
+      kind: ServiceMeshControlPlane
+      name: basic
+      uid: dda65628-123a-4fdd-8341-45b28005c0cd
+    resourceVersion: "12119891"
+    uid: a1e81a95-87e7-4e23-87f1-cbe3b299c4b1
+  spec:
+    host: istiod-basic.istio-system1.svc.cluster.local
+    trafficPolicy:
+      portLevelSettings:
+      - port:
+          number: 8188
+        tls:
+          mode: SIMPLE
+- apiVersion: networking.istio.io/v1beta1
+  kind: DestinationRule
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.istio.io/v1beta1","kind":"DestinationRule","metadata":{"annotations":{"maistra.io/mesh-generation":"2.3.3-1-5"},"labels":{"app":"wasm-cacher","app.kubernetes.io/component":"wasm-extensions","app.kubernetes.io/instance":"istio-system1","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"wasm-extensions","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.3-1-5","heritage":"Tiller","istio.io/rev":"basic","maistra-version":"2.2.6","maistra.io/owner":"istio-system1","maistra.io/owner-name":"basic","release":"istio"},"name":"wasm-cacher-basic","namespace":"istio-system1","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"dda65628-123a-4fdd-8341-45b28005c0cd"}]},"spec":{"host":"wasm-cacher-basic.istio-system1.svc.cluster.local","trafficPolicy":{"tls":{"mode":"DISABLE"}}}}
+      maistra.io/mesh-generation: 2.3.3-1-5
+    creationTimestamp: "2023-05-26T09:59:52Z"
+    generation: 1
+    labels:
+      app: wasm-cacher
+      app.kubernetes.io/component: wasm-extensions
+      app.kubernetes.io/instance: istio-system1
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: wasm-extensions
+      app.kubernetes.io/part-of: istio
+      app.kubernetes.io/version: 2.3.3-1-5
+      heritage: Tiller
+      istio.io/rev: basic
+      maistra-version: 2.2.6
+      maistra.io/owner: istio-system1
+      maistra.io/owner-name: basic
+      release: istio
+    name: wasm-cacher-basic
+    namespace: istio-system1
+    ownerReferences:
+    - apiVersion: maistra.io/v2
+      blockOwnerDeletion: true
+      controller: true
+      kind: ServiceMeshControlPlane
+      name: basic
+      uid: dda65628-123a-4fdd-8341-45b28005c0cd
+    resourceVersion: "12120060"
+    uid: a536f68b-89c0-406c-9a8d-195c51bd2694
+  spec:
+    host: wasm-cacher-basic.istio-system1.svc.cluster.local
+    trafficPolicy:
+      tls:
+        mode: DISABLE
+kind: List
+metadata:
+  resourceVersion: ""

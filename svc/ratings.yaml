@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    ppa: ratings
+    service: ratings
+  name: ratings
+  namespace: book1
+spec:
+  clusterIP: 172.30.188.103
+  clusterIPs:
+  - 172.30.188.103
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    port: 9080
+    protocol: TCP
+    targetPort: 9080
+  selector:
+    ppa: ratings
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
