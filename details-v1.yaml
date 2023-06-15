@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    ppa: details
-    vre: v1
+    app.kubernetes.io/instance: details
+    app.kubernetes.io/version: v1
   name: details-v1
-  namespace: book1
+  namespace: bookinfo
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      ppa: details
-      vre: v1
+      app.kubernetes.io/instance: details
+      app.kubernetes.io/version: v1
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -25,8 +25,8 @@ spec:
         sidecar.istio.io/inject: "true"
       creationTimestamp: null
       labels:
-        ppa: details
-        vre: v1
+        app.kubernetes.io/instance: details
+        app.kubernetes.io/version: v1
     spec:
       containers:
       - image: quay.io/maistra/examples-bookinfo-details-v1:2.3.0

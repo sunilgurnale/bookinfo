@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: details
+  namespace: bookinfo
+spec:
+  host: details
+  subsets:
+  - labels:
+      app.kubernetes.io/version: v1
+    name: v1
+  - labels:
+      app.kubernetes.io/version: v2
+    name: v2
+

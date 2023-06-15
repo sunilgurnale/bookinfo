@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    ppa: productpage
-    vre: v1
+    app.kubernetes.io/instance: productpage
+    app.kubernetes.io/version: v1
   name: productpage-v1
-  namespace: book1
+  namespace: bookinfo
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      ppa: productpage
-      vre: v1
+      app.kubernetes.io/instance: productpage
+      app.kubernetes.io/version: v1
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -25,8 +25,8 @@ spec:
         sidecar.istio.io/inject: "true"
       creationTimestamp: null
       labels:
-        ppa: productpage
-        vre: v1
+        app.kubernetes.io/instance: productpage
+        app.kubernetes.io/version: v1
     spec:
       containers:
       - image: quay.io/maistra/examples-bookinfo-productpage-v1:2.3.0

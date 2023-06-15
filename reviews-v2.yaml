@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    ppa: reviews
-    vre: v2
+    app.kubernetes.io/instance: reviews
+    app.kubernetes.io/version: v2
   name: reviews-v2
-  namespace: book1
+  namespace: bookinfo
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      ppa: reviews
-      vre: v2
+      app.kubernetes.io/instance: reviews
+      app.kubernetes.io/version: v2
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -25,8 +25,8 @@ spec:
         sidecar.istio.io/inject: "true"
       creationTimestamp: null
       labels:
-        ppa: reviews
-        vre: v2
+        app.kubernetes.io/instance: reviews
+        app.kubernetes.io/version: v2
     spec:
       containers:
       - env:

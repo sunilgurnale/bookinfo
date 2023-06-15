@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: ratings
+  namespace: bookinfo
+spec:
+  host: ratings
+  subsets:
+  - labels:
+      app.kubernetes.io/version: v1
+    name: v1
+  - labels:
+      app.kubernetes.io/version: v2
+    name: v2
+  - labels:
+      app.kubernetes.io/version: v2-mysql
+    name: v2-mysql
+  - labels:
+      app.kubernetes.io/version: v2-mysql-vm
+    name: v2-mysql-vm
+
